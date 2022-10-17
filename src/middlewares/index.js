@@ -850,7 +850,6 @@ const rytrmeMiddleware = (prefix) => createProxyMiddleware({
 
 const applyMiddleware = async (req, res, next) => {
     let domain = req.headers["host"];
-    domain = "rytr.oceanserver.link";
     let setting = await settingModel.findOne();
     let proxy = await proxyModel.findOne({domain});
     if (proxy !== null) {
